@@ -14,7 +14,7 @@ class Robot
 
     letter_list = [*'A'..'Z']
     letters = letter_list[rand(26)] + letter_list[rand(26)]
-    name = letters + rand(10).to_s + rand(10).to_s + rand(10).to_s
+    name = letters + [rand(10), rand(10), rand(10)].join
 
     return name
   end
