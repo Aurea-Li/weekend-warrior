@@ -1,20 +1,12 @@
 class Alouette
-  VERSE_PARTS = ["la tête", "le bec", "les yeux", "le cou", "les ailes", "les pattes", "la queue", "le dos"]
+  VERSE_PARTS = ["Et la tête!", "Et le bec!", "Et les yeux!", "Et le cou!", "Et les ailes!", "Et les pattes!", "Et la queue!", "Et le dos!"]
 
   MAX_VERSE = 7
 
   def self.lines_for_verse(verse_num)
-    verse_object = VERSE_PARTS(verse_num)
 
-    verse = "Je te plumerai la tête.\nJe te plumerai la tête.\nEt la tête!\nEt la tête!"
-
-    if verse_num > 0
-      verse_num.times do |i|
-        verse += self.lines_for_verse(i)
-      end
-    end
-
-    return verse
+    return [VERSE_PARTS[0]] if verse_num == 0
+    return VERSE_PARTS[0..verse_num].reverse
   end
 
   def self.verse(verse_num)
@@ -32,4 +24,5 @@ class Alouette
   def self.sing
     return self.verse(MAX_VERSE)
   end
+
 end
