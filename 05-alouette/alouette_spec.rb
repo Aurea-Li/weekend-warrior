@@ -34,12 +34,10 @@ describe Alouette do
 
   describe "verse" do
     it "returns a string" do
-      skip
       Alouette.verse(3).must_be_kind_of String
     end
 
     it "first two lines begin with 'Je te plumerai'" do
-      skip
       lines = Alouette.verse(3).split("\n")
 
       # If there aren't at least 2 lines, don't continue
@@ -51,7 +49,7 @@ describe Alouette do
     end
 
     it "last three lines are 'Alouette! Alouette! A-a-a-ah'" do
-      skip
+
       lines = Alouette.verse(3).split("\n")
 
       # If there aren't at least 3 lines, don't continue
@@ -63,7 +61,7 @@ describe Alouette do
     end
 
     it "middle lines begin with 'Et ' and end with '!'" do
-      skip
+
       lines = Alouette.verse(3).split("\n")
 
       # If there aren't at least 6 lines, don't continue
@@ -82,16 +80,16 @@ describe Alouette do
       skip
       expected_verse = <<-__END_VERSE__
       Je te plumerai les yeux.
-Je te plumerai les yeux.
-Et les yeux!
-Et les yeux!
-Et le bec!
-Et le bec!
-Et la tête!
-Et la tête!
-Alouette!
-Alouette!
-A-a-a-ah
+      Je te plumerai les yeux.
+      Et les yeux!
+      Et les yeux!
+      Et le bec!
+      Et le bec!
+      Et la tête!
+      Et la tête!
+      Alouette!
+      Alouette!
+      A-a-a-ah
       __END_VERSE__
       expected_verse.strip!
       Alouette.verse(2).must_equal expected_verse

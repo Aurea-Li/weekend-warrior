@@ -11,14 +11,23 @@ class Alouette
 
   def self.verse(verse_num)
 
-    verse = "Alouette, gentille alouette, \nAlouette, je te plumerai."
+    str = "Alouette, gentille alouette, \nAlouette, je te plumerai.\n\n"
     (verse_num + 1).times do |i|
-      verse += self.lines_for_verse
+      phrases = self.lines_for_verse(i)
+
+      phrases.map do |phrase|
+        phrase[3..-2]
+      end
+
+      phrases.each do |phrase|
+        str += "Je te plumerai #{phrase}.\nJe te plumerai #{phrase}.\n"
+        str += "#{phrase}\n#{phrase}"
+      end
     end
 
-    verse += "Alouette!\nAlouette!\nA-a-a-ah"
+    str += "\nAlouette!\nAlouette!\nA-a-a-ah"
 
-    return verse
+    return str
   end
 
   def self.sing
@@ -26,3 +35,5 @@ class Alouette
   end
 
 end
+
+puts Alouette.verse(1)
