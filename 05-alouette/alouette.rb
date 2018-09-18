@@ -12,17 +12,16 @@ class Alouette
   def self.verse(verse_num)
 
     str = "Alouette, gentille alouette, \nAlouette, je te plumerai.\n\n"
-    (verse_num + 1).times do |i|
-      phrases = self.lines_for_verse(i)
+    phrases = self.lines_for_verse(verse_num)
 
-      phrases.map! do |phrase|
-        phrase[3..-2]
-      end
+    phrases.map! do |phrase|
+      phrase[3..-2]
+    end
 
-      phrases.each do |phrase|
-        str += "\nJe te plumerai #{phrase}.\nJe te plumerai #{phrase}.\n"
-        str += "Et #{phrase}!\nEt #{phrase}!"
-      end
+    str += "Je te plumerai #{phrases.first}.\nJe te plumerai #{phrases.first}."
+
+    phrases.each do |phrase|
+      str += "\nEt #{phrase}!\nEt #{phrase}!"
     end
 
     str += "\nAlouette!\nAlouette!\nA-a-a-ah"
@@ -36,4 +35,4 @@ class Alouette
 
 end
 
-puts Alouette.verse(1)
+puts Alouette.verse(2)
