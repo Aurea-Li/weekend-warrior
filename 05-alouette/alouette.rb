@@ -11,25 +11,24 @@ class Alouette
 
   def self.verse(verse_num)
 
-    str = "Alouette, gentille alouette, \nAlouette, je te plumerai.\n\n"
     phrases = self.lines_for_verse(verse_num)
 
     phrases.map! do |phrase|
       phrase[3..-2]
     end
 
-    str += "Je te plumerai #{phrases.first}.\nJe te plumerai #{phrases.first}."
+    str = "Je te plumerai #{phrases.first}.\nJe te plumerai #{phrases.first}."
 
     phrases.each do |phrase|
       str += "\nEt #{phrase}!\nEt #{phrase}!"
     end
 
     str += "\nAlouette!\nAlouette!\nA-a-a-ah"
-
     return str
   end
 
   def self.sing
+    str = "Alouette, gentille alouette, \nAlouette, je te plumerai.\n\n"
     return self.verse(MAX_VERSE)
   end
 
