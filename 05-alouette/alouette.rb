@@ -38,5 +38,3 @@ class Alouette
     return str
   end
 end
-
-puts Alouette.sing
