@@ -1,4 +1,3 @@
-require 'pry'
 class Alouette
   VERSE_PARTS = ["Et la tête!", "Et le bec!", "Et les yeux!", "Et le cou!", "Et les ailes!", "Et les pattes!", "Et la queue!", "Et le dos!"]
 
@@ -31,7 +30,7 @@ class Alouette
   def self.sing
     refrain = "Alouette, gentille alouette,\nAlouette, je te plumerai."
     str = refrain
-    (MAX_VERSE+1).times do |i|
+    (MAX_VERSE + 1).times do |i|
       str  += ("\n\n" + self.verse(i))
       str += ("\n\n" + refrain)
     end
